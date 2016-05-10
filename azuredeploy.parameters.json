@@ -3,37 +3,22 @@
 	"contentVersion" : "1.0.0.0",
 	"parameters" : {
 		"location": {
-			"value" : "East US"
+			"value" : "West US"
 		},
-		"dcVMSize" : {
+		"fileServerSize" : {
 			"value" : "Standard_D1"
 		},
-		"adminVMSize" : {
+		"webServerSize" : {
 			"value" : "Standard_D1"
-		},
-		"edgeVMSize" : {
-			"value" : "Standard_D2"
-		},
-		"syncVMSize" : {
-			"value" : "Standard_D1"
-		},
-		"domainName" : {
-			"value" : "contoso.com"
-		},
-		"domainUsername" : {
-			"value" : "labAdmin"
-		},
-		"domainPassword" : {
-			"value" : "Passw0rd!"
 		},
 		"vmUsername" : {
-			"value" : "labadmin"
+			"value" : "demoadmin"
 		},
 		"vmPassword" : {
 			"value" : "Passw0rd!"
 		},
 		"assetLocation" : {
-			"value" : "https://rawgit.com/KevinRemde/AZInfraLabBase/master/"
+			"value" : "https://raw.githubusercontent.com/KevinRemde/AADSCDemoBase/master/"
 		}
 	}
 }
