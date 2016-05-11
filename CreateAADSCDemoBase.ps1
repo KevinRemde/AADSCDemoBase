@@ -24,14 +24,16 @@ $rgName = "RG-AADSCDemo" + $init
 
 # Use these if you want to drive the deployment from local template and parameter files..
 #
-$localAssets = "D:\GitHub\AADSCDemo\"
-$templateFileLoc = $localAssets + "azuredeploy.json"
-$parameterFileLoc = $localAssets + "azuredeploy.parameters.json"
+#$localAssets = "D:\GitHub\AADSCDemo\"
+# $templateFileLoc = $localAssets + "azuredeploy.json"
+# $parameterFileLoc = $localAssets + "azuredeploy.parameters.json"
 
+# Use these if you want to drive the deployment from Github-based template. 
+#
 # $assetLocation = "https://rawgit.com/KevinRemde/AADSCDemoBase/master/" 
 # If the rawgit.com path is not available, you can try un-commenting the following line instead...
 $assetLocation = "https://raw.githubusercontent.com/KevinRemde/AADSCDemoBase/master/"
-# $templateFileURI  = $assetLocation + "azuredeploy.json"
+$templateFileURI  = $assetLocation + "azuredeploy.json"
 # $parameterFileURI = $assetLocation + "azuredeploy.parameters.json" # Use only if you want to use Kevin's defaults (not recommended)
 
 
