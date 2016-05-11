@@ -1,8 +1,4 @@
-﻿<#
- 
-#> 
-
-# Sign into Azure
+﻿# Sign into Azure
 
 Login-AzureRmAccount
 Get-AzureRmSubscription | Select-AzureRmSubscription 
@@ -94,15 +90,15 @@ New-AzureRMResourceGroup -Name $rgname -Location $loc
 # Note: takes approx. 30 minutes to complete.
 
 Write-Host ""
-Write-Host "Deploying the VMs.  This will take 30-45 minutes to complete."
+Write-Host "Deploying the VMs.  This will take several minutes to complete."
 Write-Host "Started at" (Get-Date -format T)
 Write-Host ""
 
 # THIS IS THE MAIN ONE YOU'LL launch to pull the template file from the repository, and use the created parameter object.
-# Measure-Command -expression {New-AzureRMResourceGroupDeployment -ResourceGroupName $rgName -TemplateUri $templateFileURI -TemplateParameterObject $parameterObject}
+Measure-Command -expression {New-AzureRMResourceGroupDeployment -ResourceGroupName $rgName -TemplateUri $templateFileURI -TemplateParameterObject $parameterObject}
 
 # use only if you want to use a local copy of the template file.
-Measure-Command -expression {New-AzureRMResourceGroupDeployment -ResourceGroupName $rgName -TemplateFile $templateFileLoc -TemplateParameterObject $parameterObject}
+# Measure-Command -expression {New-AzureRMResourceGroupDeployment -ResourceGroupName $rgName -TemplateFile $templateFileLoc -TemplateParameterObject $parameterObject}
 
 # use only if you want to use Kevin's default parameters (not recommended)
 # New-AzureRMResourceGroupDeployment -ResourceGroupName $rgName -TemplateUri $templateFileURI -TemplateParameterUri $parameterFileURI
