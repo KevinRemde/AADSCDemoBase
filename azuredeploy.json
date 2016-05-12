@@ -16,6 +16,13 @@
 				"description" : "The region to deploy the resources into"
 			}
 		},
+		"fileServerName" : {
+			"type" : "string",
+			"defaultValue" : "fileserver",
+			"metadata" : {
+				"description" : "Name for the File Server"
+			}
+		},
 		"fileServerDNSName" : {
 			"type" : "string",
 			"defaultValue" : "fskardns",
@@ -28,6 +35,13 @@
 			"defaultValue" : "Standard_D1",
 			"metadata" : {
 				"description" : "The size of the virtual machine"
+			}
+		},
+		"webServerName" : {
+			"type" : "string",
+			"defaultValue" : "webserver",
+			"metadata" : {
+				"description" : "Name for the File Server"
 			}
 		},
 		"webServerDNSName": {
@@ -68,8 +82,8 @@
 	"variables" : {
 		"fileServerName": "fileserver",
 		"webServerName": "webserver",
-		"fileServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), variables('fileServerName'))]",
-		"webServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), variables('webServerName'))]",
+		"fileServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), parameters('fileServerName'))]",
+		"webServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), parameters('webServerName'))]",
 		"imagePublisher" : "MicrosoftWindowsServer",
 		"imageOffer" : "WindowsServer",
 		"imageSKU" : "2012-R2-Datacenter",
@@ -223,7 +237,7 @@
 		}, {
 			"type" : "Microsoft.Compute/virtualMachines",
 			"apiVersion" : "[variables('apiVersion')]",
-			"name" : "[variables('fileServerName')]",
+			"name" : "[parameters('fileServerName')]",
 			"location" : "[resourceGroup().location]",
 			"dependsOn" : [
 				"[resourceId('Microsoft.Storage/storageAccounts',variables('fileServerStorageAccountName'))]",
@@ -234,7 +248,7 @@
 					"vmSize" : "[parameters('fileServerSize')]"
 				},
 				"osProfile" : {
-					"computerName" : "[variables('fileServerName')]",
+					"computerName" : "[parameters('fileServerName')]",
 					"adminUsername" : "[parameters('vmUserName')]",
 					"adminPassword" : "[parameters('vmPassword')]"
 				},
@@ -263,7 +277,7 @@
 			}
 		}, {
 			"type" : "Microsoft.Compute/virtualMachines",
-			"name" : "[variables('webServerName')]",
+			"name" : "[parameters('webServerName')]",
 			"apiVersion" : "[variables('apiVersion')]",
 			"location" : "[resourceGroup().location]",
 			"dependsOn" : [
@@ -275,7 +289,7 @@
 					"vmSize" : "[parameters('webServerSize')]"
 				},
 				"osProfile" : {
-					"computerName" : "[variables('webServerName')]",
+					"computerName" : "[parameters('webServerName')]",
 					"adminUsername" : "[parameters('vmUserName')]",
 					"adminPassword" : "[parameters('vmPassword')]"
 				},

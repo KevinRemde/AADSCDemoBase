@@ -5,8 +5,14 @@
 		"location": {
 			"value" : "West US"
 		},
+		"fileServerName" : {
+			"value" : "fileserver"
+		},
 		"fileServerSize" : {
 			"value" : "Standard_D1"
+		},
+		"webServerName" : {
+			"value" : "webserver"
 		},
 		"webServerSize" : {
 			"value" : "Standard_D1"
