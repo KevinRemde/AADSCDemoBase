@@ -66,8 +66,8 @@
 		}
 	},
 	"variables" : {
-		"fileServerName": "fileserver2",
-		"webServerName": "webserver2",
+		"fileServerName": "fileserver",
+		"webServerName": "webserver",
 		"fileServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), variables('fileServerName'))]",
 		"webServerStorageAccountName" : "[concat(uniquestring(resourceGroup().id), variables('webServerName'))]",
 		"imagePublisher" : "MicrosoftWindowsServer",
