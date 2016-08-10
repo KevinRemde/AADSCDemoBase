@@ -1,9 +1,8 @@
 ﻿#!/bin/bash
 
 # Set globals here before running the script
-# Important: StorageAccountName should be lowercase
 
-# PublishSettingsFileLocation="./AzureSub.publishsettings"
+# PublishSettingsFileLocation="./AzureSub.publishsettings" 
 SubscriptionName="KevRem Azure"
 rgName="rgtest"
 assetLocation="https://raw.githubusercontent.com/KevinRemde/AADSCDemoBase/master/"
@@ -29,3 +28,6 @@ azure group create -n $rgName -l "West US"
 # Deploy!
 #azure group deployment create $rgName -n testRGDeploy -e $parmFilePath -f $templateFilePath  
 azure group deployment create $rgName -n testRGDeploy -e $parmFilePath --template-uri $templateFileURI 
+
+# Delete the whole RG
+#azure group delete rgtest 
