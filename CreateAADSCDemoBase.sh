@@ -3,7 +3,7 @@
 # Set globals here before running the script
 # Important: StorageAccountName should be lowercase
 
-PublishSettingsFileLocation="/home/Kevin/AzureSub.publishsettings"
+# PublishSettingsFileLocation="./AzureSub.publishsettings"
 SubscriptionName="KevRem Azure"
 rgName="rgtest"
 assetLocation="https://raw.githubusercontent.com/KevinRemde/AADSCDemoBase/master/"
@@ -12,7 +12,10 @@ templateFilePath="./azuredeploy.json"
 parmFilePath="./azuredeploy.parameters.json"
 
 # Add Azure account
-azure account import $PublishSettingsFileLocation
+# azure account import $PublishSettingsFileLocation
+
+# Do the interactive login instead
+azure login
 
 # Set the Azure account you want to use
 azure account set "$SubscriptionName"
