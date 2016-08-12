@@ -73,10 +73,10 @@ while ($uniqueName -eq $false) {
 
 $parameterObject = @{
     "location" = "$loc"
-    "fileServerName" = "fileserver2" 
+    "fileServerName" = "fileserver1" 
     "fileServerDNSName" = $fileServerDNSVMName 
     "fileServerSize" = "Standard_D1"
-    "webServerName" = "webserver2" 
+    "webServerName" = "webserver1" 
     "webServerDNSName" = $webServerDNSVMName 
     "webServerSize" = "Standard_D1"
     "vmUserName" = "demoAdmin"
