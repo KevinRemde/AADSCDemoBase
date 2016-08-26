@@ -1,7 +1,7 @@
 ﻿# Sign into Azure
 
 Login-AzureRmAccount
-Get-AzureRmSubscription | Select-AzureRmSubscription 
+Get-AzureRmSubscription -SubscriptionName "KevRem Azure" | Select-AzureRmSubscription 
 
 
 # collect initials for generating unique names
