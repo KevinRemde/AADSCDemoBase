@@ -1,10 +1,10 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # Set globals here before running the script
 
 # PublishSettingsFileLocation="./AzureSub.publishsettings" 
 SubscriptionName="KevRem Azure"
-rgName="rgtest"
+rgName="rg-xplat"
 assetLocation="https://raw.githubusercontent.com/KevinRemde/AADSCDemoBase/master/"
 templateFileURI=$assetLocation"azuredeploy.json"
 templateFilePath="./azuredeploy.json"
@@ -14,7 +14,7 @@ parmFilePath="./azuredeploy.parameters.json"
 # azure account import $PublishSettingsFileLocation
 
 # Do the interactive login instead
-azure login
+# azure login
 
 # Set the Azure account you want to use
 azure account set "$SubscriptionName"
@@ -27,7 +27,7 @@ azure group create -n $rgName -l "West US"
 
 # Deploy!
 #azure group deployment create $rgName -n testRGDeploy -e $parmFilePath -f $templateFilePath  
-azure group deployment create $rgName -n testRGDeploy -e $parmFilePath --template-uri $templateFileURI 
+azure group deployment create $rgName -e $parmFilePath --template-uri $templateFileURI 
 
 # Delete the whole RG
 #azure group delete rgtest 
