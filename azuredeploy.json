@@ -104,7 +104,7 @@
 		"feSubnetId" : "[concat(variables('vnetID'),'/subnets/', variables('feSubnetName'))]",
 		"labSubnetId" : "[concat(variables('vnetID'),'/subnets/', variables('labSubnetName'))]",
 		"vnetTemplateUri" : "[concat(parameters('assetLocation'),'vnet.json')]",
-		"vnetwithDNSTemplateUri" : "[concat(parameters('assetLocation'),'vnet-with-dns-server.json')]",
+		"vnetwithDNSTemplateUri" : "[concat(parameters('assetLocation'),'vnet-with-dns-server.json')]"
 	},
 	"resources" : [{
 			"type" : "Microsoft.Network/publicIPAddresses",
