@@ -17,7 +17,7 @@
 		"webServerSize" : {
 			"value" : "Standard_D1"
 		},
-		"vmUsername" : {
+		"vmUserName" : {
 			"value" : "demoadmin"
 		},
 		"vmPassword" : {
