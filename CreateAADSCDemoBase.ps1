@@ -44,7 +44,7 @@ $templateFileURI  = $assetLocation + "azuredeploy.json"
 # Those names are created by the template using randomly generated complex names, based on 
 # the resource group ID.
 
-$machine = "fileserver"
+$machine = "filedns"
 $uniquename = $false
 $counter = 0
 while ($uniqueName -eq $false) {
@@ -56,7 +56,7 @@ while ($uniqueName -eq $false) {
     }
 } 
 	
-$machine = "webserver"
+$machine = "webdns"
 $uniquename = $false
 $counter = 0
 while ($uniqueName -eq $false) {
@@ -73,14 +73,14 @@ while ($uniqueName -eq $false) {
 
 $parameterObject = @{
     "location" = "$loc"
-    "fileServerName" = "fileserver1" 
+    "fileServerName" = "file" 
     "fileServerDNSName" = $fileServerDNSVMName 
     "fileServerSize" = "Standard_D1"
-    "webServerName" = "webserver1" 
+    "webServerName" = "web" 
     "webServerDNSName" = $webServerDNSVMName 
     "webServerSize" = "Standard_D1"
     "vmUserName" = "demoAdmin"
-    "vmPassword" = "Passw0rd!"
+#    "vmPassword" = "Passw0rd!"
     "assetLocation" = $assetLocation
 }
 
