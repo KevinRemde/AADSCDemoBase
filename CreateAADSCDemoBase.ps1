@@ -73,10 +73,10 @@ while ($uniqueName -eq $false) {
 
 $parameterObject = @{
     "location" = "$loc"
-    "fileServerName" = "file" 
+    "fileServerName" = "file2" 
     "fileServerDNSName" = $fileServerDNSVMName 
     "fileServerSize" = "Standard_D1"
-    "webServerName" = "web" 
+    "webServerName" = "web2" 
     "webServerDNSName" = $webServerDNSVMName 
     "webServerSize" = "Standard_D1"
     "vmUserName" = "demoAdmin"
@@ -91,10 +91,10 @@ $parameterObject = @{
 New-AzureRMResourceGroup -Name $rgname -Location $loc
 
 # Build the lab machines. 
-# Note: takes approx. 30 minutes to complete.
+# Note: takes approx. 5 minutes to complete.
 
 Write-Host ""
-Write-Host "Deploying the VMs.  This will take several minutes to complete."
+Write-Host "Deploying the VMs.  This will take a few minutes to complete."
 Write-Host "Started at" (Get-Date -format T)
 Write-Host ""
 
