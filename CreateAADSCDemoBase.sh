@@ -14,7 +14,7 @@ parmFilePath="./azuredeploy.parameters.json"
 # azure account import $PublishSettingsFileLocation
 
 # Do the interactive login instead
-# azure login
+azure login
 
 # Set the Azure account you want to use
 azure account set "$SubscriptionName"

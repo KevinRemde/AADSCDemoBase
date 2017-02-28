@@ -6,13 +6,13 @@
 			"value" : "West US"
 		},
 		"fileServerName" : {
-			"value" : "file"
+			"value" : "file2"
 		},
 		"fileServerSize" : {
 			"value" : "Standard_D1"
 		},
 		"webServerName" : {
-			"value" : "web"
+			"value" : "web2"
 		},
 		"webServerSize" : {
 			"value" : "Standard_D1"
